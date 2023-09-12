@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost:3307',
+	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => 'incos123',
-	'database' => 'orellana',
+	'password' => '',
+	'database' => 'bdsalay',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
