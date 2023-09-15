@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Subir curriculum </h1>
+            <h1>Lista de Coductores</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -24,24 +24,29 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"> Adjunte una foto del Vehiculo </h3>
+                <h3 class="card-title"> Inscribir conductor </h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-              <?php
-echo form_open_multipart('conductor/subir'); // Cambia 'conductor' por el controlador correspondiente si es diferente
-?>
-<input type="hidden" name="idConductor" value="<?php echo $idConductor; ?>">
-<input type="file" name="userfile" class="form-control">
-<br>
-<button type="submit" class="btn btn-primary">SUBIR</button>
-<?php
-echo form_close();
-?>
-                <?php    
-                // </form>
-                ?>
-              </div>
+    <?php
+    echo form_open_multipart('conductor/agregardb')
+    ?>
+    <input type="text" name="nombre" placeholder="Nombre" class="form-control">
+    <input type="text" name="primerApellido" placeholder="Primer Apellido" class="form-control">
+    <input type="text" name="segundoApellido" placeholder="Segundo Apellido" class="form-control">
+    <input type="text" name="email" placeholder="Email" class="form-control">
+    <input type="text" name="numeroMovil" placeholder="Número de Móvil" class="form-control">
+
+    <!-- Subir foto del conductor -->
+    <label for="foto">Foto del Conductor:</label>
+    <input type="file" name="foto" class="form-control-file">
+    
+    <button type="submit" class="btn btn-primary">AGREGAR</button>
+    <?php
+    echo form_close()
+    ?>
+</div>
+
               <!-- /.card-body -->
             </div>
             <!-- /.card -->

@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Lista de paises</h1>
+            <h1>Lista de Conductores</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -24,9 +24,9 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"> Lista de Paises Descartados </h3>
+                <h3 class="card-title"> Lista de Conductores deshabilitados </h3>
                 <br>
-                <h3 class="card-title"> productos habilitados </h3>
+                <h3 class="card-title"> Conductores habilitados </h3>
                 <br>
                 <a href="<?php echo base_url(); ?>index.php/usuarios/logout">
                   <button type="button" class="btn btn-warning">Cerrar sesion</button>
