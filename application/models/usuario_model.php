@@ -53,5 +53,51 @@ class Usuario_model extends CI_Model {
         // Puedes utilizar la librería de envío de correo electrónico de CodeIgniter o alguna otra.
         // Asegúrate de configurar la función de envío de correo electrónico en tu aplicación.
     }
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        // Carga la base de datos de CodeIgniter
+        $this->load->database();
+    }
+
+    public function crearUsuario($nombre, $correo)
+    {
+        // Agrega aquí la lógica para crear un usuario en la base de datos
+        // Utiliza los parámetros $nombre y $correo para insertar los datos en la tabla 'usuarios'
+    }
+
+    public function modificarUsuario($id, $nombre, $correo)
+    {
+        // Agrega aquí la lógica para modificar un usuario en la base de datos
+        // Utiliza los parámetros $id, $nombre y $correo para actualizar los datos en la tabla 'usuarios'
+    }
+
+    public function cambiarEstadoUsuario($id, $estado)
+    {
+        // Agrega aquí la lógica para cambiar el estado de un usuario en la base de datos
+        // Utiliza los parámetros $id y $estado para actualizar el campo 'estado' en la tabla 'usuarios'
+        $data = array('estado' => $estado);
+        $this->db->where('id', $id);
+        $this->db->update('usuarios', $data);
+    }
+
+    public function eliminarUsuario($id)
+    {
+        // Agrega aquí la lógica para eliminar un usuario de la base de datos
+        // Utiliza el parámetro $id para eliminar el registro correspondiente de la tabla 'usuarios'
+        $this->db->where('id', $id);
+        $this->db->delete('usuarios');
+    }
+
+    // Agrega más acciones relacionadas con la administración aquí
+
+    public function generarReporte()
+    {
+        // Lógica para generar reportes
+        // Agrega aquí la lógica para generar reportes según tus necesidades
+        // Puedes utilizar bibliotecas de generación de PDF, Excel u otros formatos para crear el reporte
+    }
 }
 ?>

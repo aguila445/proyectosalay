@@ -1,3 +1,4 @@
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class EncargadoController extends CI_Controller
@@ -15,6 +16,8 @@ class EncargadoController extends CI_Controller
     public function index()
     {
         // Lógica para la página de inicio del encargado
+        // Puedes cargar una vista con el panel de control del encargado
+        $this->load->view('encargado_panel');
     }
 
     public function crearFraterno()
@@ -30,6 +33,13 @@ class EncargadoController extends CI_Controller
             if ($this->form_validation->run() === true) {
                 // Procesa los datos y crea el fraterno en la base de datos
                 // Lógica para crear nuevos fraternos en la sucursal
+                $this->load->model('Fraterno_model');
+                $nombre = $this->input->post('nombre');
+                $correo = $this->input->post('correo');
+                // Agrega aquí la lógica para crear un nuevo fraterno
+                // Utiliza el modelo Fraterno_model para interactuar con la base de datos
+                // Después de crear al fraterno, puedes redirigirlo a la página de gestión de fraternos
+                redirect('encargado/gestionarFraternos');
             } else {
                 // En caso de validación fallida, muestra los errores
                 $this->load->view('formulario_creacion_fraterno');
@@ -53,6 +63,13 @@ class EncargadoController extends CI_Controller
             if ($this->form_validation->run() === true) {
                 // Procesa los datos y modifica el fraterno en la base de datos
                 // Lógica para modificar un fraterno existente
+                $this->load->model('Fraterno_model');
+                $nombre = $this->input->post('nombre');
+                $correo = $this->input->post('correo');
+                // Agrega aquí la lógica para modificar al fraterno con el ID proporcionado
+                // Utiliza el modelo Fraterno_model para interactuar con la base de datos
+                // Después de modificar al fraterno, puedes redirigirlo a la página de gestión de fraternos
+                redirect('encargado/gestionarFraternos');
             } else {
                 // En caso de validación fallida, muestra los errores
                 $this->load->view('formulario_modificacion_fraterno');
@@ -66,13 +83,19 @@ class EncargadoController extends CI_Controller
     public function eliminarFraterno($id)
     {
         // Lógica para eliminar un fraterno
+        $this->load->model('Fraterno_model');
+        // Agrega aquí la lógica para eliminar al fraterno con el ID proporcionado
+        // Utiliza el modelo Fraterno_model para interactuar con la base de datos
+        // Después de eliminar al fraterno, puedes redirigirlo a la página de gestión de fraternos
+        redirect('encargado/gestionarFraternos');
     }
-
-    // Agrega más acciones relacionadas con la gestión de encargados aquí
 
     public function gestionarEventos()
     {
         // Lógica para la gestión de eventos
+        // Puedes cargar una vista con el panel de gestión de eventos del encargado
+        $this->load->view('encargado_gestion_eventos');
     }
 }
+?>
 
